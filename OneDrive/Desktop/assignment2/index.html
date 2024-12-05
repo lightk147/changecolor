@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let count = 0
+    let generateHexColor = () => {
+        let randomColor = Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")
+        return `#${randomColor}`
+
+        // console.log(color);
+        // document.body.style.backgroundColor = color
+
+    }
+    generateHexColor()
+
+    let changeColor = () => {
+        if (count < 3) {
+            let hexColor = generateHexColor();
+            console.log(hexColor);
+            document.body.style.backgroundColor = hexColor
+            count++
+
+        } else {
+            clearInterval(stopCount)
+        }
+    }
+    changeColor()
+    let stopCount = setInterval(changeColor, 1000);
+
+   
+</script>
